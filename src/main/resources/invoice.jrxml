@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8e15d519-eab3-497d-b483-a5c1caac3ee0">
+   <style name="Title" fontName="Arial" fontSize="26" isBold="true"/>
+    <style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+    <style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+    <style name="Detail" fontName="Arial" fontSize="12"/>
+
+    <field name="id" class="java.lang.Long"/>
+    <field name="username" class="java.lang.String"/>
+    <field name="password" class="java.lang.String"/>
+    <field name="authorities" class="java.lang.String"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="70" splitType="Stretch">
+
+            <staticText>
+                <reportElement style="Title" x="0" y="13" width="263" height="33" uuid="91f5fe7f-a65f-46a3-81ae-30f2d82c45a2"/>
+                <textElement verticalAlignment="Middle"/>
+                <text><![CDATA[getCrookd Garments]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Detail" x="60" y="46" width="183" height="18" uuid="6931f6fc-c9e8-4cc3-9eec-607a123c87f7"/>
+                <text><![CDATA[Invoice of the Purchase made]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <detail>
+        <band height="400" splitType="Stretch">
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="ffde0804-90e8-496b-86fb-ee363619f187"/>
+                <graphicElement>
+                    <pen lineWidth="0.5" lineColor="#999999"/>
+                </graphicElement>
+            </line>
+            <image>
+                <reportElement x="-20" y="15" width="600" height="255" uuid="619652c0-9538-4a0f-8bca-d61d3a3bb660"/>
+                <imageExpression><![CDATA["https://images.moviesanywhere.com/e42578bafcef3648791b8a98c2757ccc/050f21bc-35a7-4366-93ca-b1ac1f13bb70.jpg?r=3x1&w=2400"]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement x="147" y="240" width="100" height="30" uuid="02e0e6bd-5594-4f19-8fb4-01c1fbcf3a63"/>
+                <textElement textAlignment="Right"/>
+                <text><![CDATA[ID:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="147" y="280" width="100" height="30" uuid="2b3b4f5d-8a55-47ef-b74b-bad491260b4b"/>
+                <textElement textAlignment="Right"/>
+                <text><![CDATA[Client Name:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="147" y="320" width="100" height="30" uuid="6e6fb27e-50f6-4b8e-b501-d2f4b4a21e45"/>
+                <textElement textAlignment="Right"/>
+                <text><![CDATA[Client password:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="147" y="360" width="100" height="30" uuid="3628936c-0b5e-49e3-ad42-a46d96bd3d23"/>
+                <textElement textAlignment="Right"/>
+                <text><![CDATA[Authorities:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="277" y="240" width="100" height="30" uuid="77bdf693-7798-4b73-88eb-a0db4d01155d"/>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="277" y="280" width="100" height="30" uuid="ed711795-6ce0-4845-9dcc-2d593c09d5ee"/>
+                <textFieldExpression><![CDATA[$F{username}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="280" y="320" width="100" height="30" uuid="098fc874-906e-4811-bf2a-122e5dbbded7"/>
+                <textFieldExpression><![CDATA[$F{password}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="281" y="360" width="100" height="30" uuid="60cfa854-0795-486d-98ad-6059a859d353"/>
+                <textFieldExpression><![CDATA[$F{authorities}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <pageFooter>
+        <band height="30" splitType="Stretch">
+            <textField>
+                <reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="c9e9a989-76ae-4c92-a08c-dba3c3185f04"/>
+                <textElement textAlignment="Right">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="736cac2d-8f9a-48bb-b4e7-09302ce0e313"/>
+                <textElement>
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="c49bc611-71b3-4860-8112-76288860b48d"/>
+                <textElement>
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
+</jasperReport>
